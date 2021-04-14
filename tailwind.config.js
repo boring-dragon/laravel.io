@@ -10,19 +10,19 @@ module.exports = {
         extend: {
             colors: {
                 lio: {
-                    100: '#d1f2eb',
-                    200: '#a3e4d7',
-                    300: '#74d7c4',
-                    400: '#46c9b0',
+                    100: '#d6f6f0',
+                    200: '#a3ecde',
+                    300: '#6ee2cc',
+                    400: '#43d4b8',
                     500: '#18bc9c',
-                    600: '#15a589',
-                    700: '#0e715e',
-                    800: '#0a4b3e',
-                    900: '#05261f',
+                    600: '#14a88b',
+                    700: '#0e8b73',
+                    800: '#0a6553',
+                    900: '#053c31',
                 },
             },
             fontFamily: {
-                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
         },
     },
