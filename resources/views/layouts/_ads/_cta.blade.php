@@ -1,6 +1,6 @@
-<p class="text-center px-4 my-2">
+<p class="text-center px-4 mt-6">
     <a href="https://github.com/sponsors/laravelio" target="_blank" rel="noopener"
-       class="text-xs text-lio-700 hover:text-gray-700">
+       class="text-base text-gray-700 border-b border-gray-100 pb-1">
         {{ $text }}
     </a>
 </p>

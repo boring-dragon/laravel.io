@@ -34,7 +34,7 @@
         <!-- /Head section -->
 
         <!-- Banner ad -->
-        <section>
+        <section class="my-20">
             @include('layouts._ads._footer')
         </section>
         <!-- /Banner ad -->
