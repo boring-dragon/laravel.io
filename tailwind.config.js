@@ -20,9 +20,21 @@ module.exports = {
                     800: '#0a6553',
                     900: '#053c31',
                 },
+                gray: {
+                    100: '#e8efed',
+                    200: '#d5ddddb',
+                    300: '#c5ccca',
+                    400: '#adb6b3',
+                    500: '#959d9a',
+                    600: '#79827f',
+                    700: '#616765',
+                    800: '#444b49',
+                    900: '#313836',
+                }
             },
             fontFamily: {
-                sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                sans: ['Helvetica Neue', ...defaultTheme.fontFamily.sans],
+                heading: ['Inter', ...defaultTheme.fontFamily.sans],
             },
         },
     },

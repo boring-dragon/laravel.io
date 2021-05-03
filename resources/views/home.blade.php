@@ -5,18 +5,26 @@
 
     <div class="container mx-auto">
         <!-- Head section -->
-        <section>
+        <section class="flex items-center my-20">
             <div>
-                <h1 class="text-5xl">
-                    The Laravel Community Portal
-                </h1>
-                <div>
-                    <p>
-                        The Laravel portal for problem solving, knowledge sharing and community building. Join <span>46,564</span> other artisans.
-                    </p>
+                <div class="w-10/12">
+                    <h1 class="font-heading text-6xl font-bold text-gray-900 leading-tight mb-3">
+                        The Laravel Community Portal
+                    </h1>
+                    <div class="mb-5">
+                        <p class="text-gray-800 text-lg leading-8">
+                            The Laravel portal for problem solving, knowledge sharing and community building. Join <x-accent-text href="">46,564</x-accent-text> other artisans.
+                        </p>
+                    </div>
 
-                    <a href="">Join the community</a>
-                    <a href="">Visit the forum</a>
+                    <div>
+                        <x-buttons.primary-cta class="mr-2">
+                            Join the community
+                        </x-buttons.primary-cta>
+                        <x-buttons.secondary-cta>
+                            Visit the forum
+                        </x-buttons.secondary-cta>
+                    </div>
                 </div>
             </div>
             <div>
