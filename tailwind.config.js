@@ -7,10 +7,18 @@ module.exports = {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
     ],
     theme: {
+        container: {
+            screens: {
+                'sm': '640px',
+                'md': '768px',
+                'lg': '1024px',
+                'xl': '1280px',
+            }
+        },
         extend: {
             colors: {
                 lio: {
-                    100: '#d6f6f0',
+                    100: '#e6f6f3',
                     200: '#a3ecde',
                     300: '#6ee2cc',
                     400: '#43d4b8',
@@ -21,20 +29,19 @@ module.exports = {
                     900: '#053c31',
                 },
                 gray: {
-                    100: '#e8efed',
-                    200: '#d5dddb',
-                    300: '#c5ccca',
-                    400: '#adb6b3',
-                    500: '#959d9a',
-                    600: '#79827f',
-                    700: '#616765',
-                    800: '#444b49',
-                    900: '#313836',
+                    100: '#f9fafb',
+                    200: '#dfdfdf',
+                    300: '#cbcbcb',
+                    400: '#b2b2b2',
+                    500: '#989898',
+                    600: '#7e7e7e',
+                    700: '#636363',
+                    800: '#484a4a',
+                    900: '#343636',
                 }
             },
             fontFamily: {
-                sans: ['Helvetica Neue', ...defaultTheme.fontFamily.sans],
-                heading: ['Inter', ...defaultTheme.fontFamily.sans],
+                sans: ['Inter', ...defaultTheme.fontFamily.sans]
             },
         },
     },
