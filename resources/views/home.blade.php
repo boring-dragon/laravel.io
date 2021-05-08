@@ -4,15 +4,16 @@
     @include('layouts._alerts')
 
     <!-- Head section -->
-    <section class="container mx-auto flex items-center my-20">
-        <div>
-            <div class="w-10/12">
-                <h1 class="font-heading text-6xl font-bold text-gray-900 leading-tight mb-3">
+    <section class="my-20 overflow-x-hidden">
+        <div class="container mx-auto flex items-center my-20">
+            <div class="w-1/2">
+                <h1 class="font-sans text-6xl font-bold text-gray-900 leading-tight mb-3">
                     The Laravel Community Portal
                 </h1>
                 <div class="mb-5">
                     <p class="text-gray-800 text-lg leading-8">
-                        The Laravel portal for problem solving, knowledge sharing and community building. Join <x-accent-text href="">46,564</x-accent-text> other artisans.
+                        The Laravel portal for problem solving, knowledge sharing<br>
+                        and community building. Join <x-accent-text href="">46,564</x-accent-text> other artisans.
                     </p>
                 </div>
 
@@ -25,9 +26,10 @@
                     </x-buttons.secondary-cta>
                 </div>
             </div>
-        </div>
-        <div>
-            <x-community-members />
+
+            <div class="w-1/2">
+                <x-community-members />
+            </div>
         </div>
     </section>
     <!-- /Head section -->
@@ -172,7 +174,6 @@
         <div>
             <h3>Users</h3>
             <span>46,564</span>
-            <x-community-members />
         </div>
 
         <div>
