@@ -72,7 +72,7 @@
 
     <!-- Help others -->
     <section class="my-16 container mx-auto">
-        <div>
+        <div class="mx-32">
             <div class="flex items-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 w-1/2">Or you can help others</h2>
                 <p class="w-1/2 text-gray-800 text-lg">By joining our platform, you can take a<br> look at the latest unresolved threads</p>
@@ -168,22 +168,33 @@
     <!-- /Help others -->
 
     <!-- Laravel.io in numbers -->
-    <section>
-        <h2>Laravel.io in numbers</h2>
+    <section class="container mx-auto">
+        <h2 class="text-4xl leading-tight font-bold text-center text-gray-900 mb-12">Laravel.io in numbers</h2>
 
-        <div>
-            <h3>Users</h3>
-            <span>46,564</span>
-        </div>
+        <div class="flex mb-10 mx-32">
+            <div class="flex flex-col items-center rounded w-1/3 bg-lio-100 mr-6 py-9">
+                <h3 class="uppercase text-lio-500 text-lg font-bold text-center mb-11">
+                    Users
+                    <span class="text-4xl text-gray-900 block leading-tight">46,564</span>
+                </h3>
+                <img src="{{ asset('images/users.png') }}" />
+            </div>
 
-        <div>
-            <h3>Threads</h3>
-            <span>18,183</span>
-        </div>
+            <div class="flex flex-col items-center rounded w-1/3 bg-lio-100 mr-6 py-9">
+                <h3 class="uppercase text-lio-500 text-lg font-bold text-center mb-11">
+                    Threads
+                    <span class="text-4xl text-gray-900 block leading-tight">18,183</span>
+                </h3>
+                <img src="{{ asset('images/threads.png') }}" />
+            </div>
 
-        <div>
-            <h3>Replies</h3>
-            <span>500,100</span>
+            <div class="flex flex-col items-center rounded w-1/3 bg-lio-100 mr-6 py-9 shadow-inner-xl">
+                <h3 class="uppercase text-lio-500 text-lg font-bold text-center mb-11">
+                    Replies
+                    <span class="text-4xl text-gray-900 block leading-tight">500,100</span>
+                </h3>
+                <img src="{{ asset('images/replies.png') }}" />
+            </div>
         </div>
     </section>
     <!-- /Laravel.io in numbers -->
