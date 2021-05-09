@@ -9,11 +9,11 @@ module.exports = {
     theme: {
         container: {
             screens: {
-                'sm': '640px',
-                'md': '768px',
-                'lg': '1024px',
-                'xl': '1280px',
-            }
+                sm: '640px',
+                md: '768px',
+                lg: '1024px',
+                xl: '1280px',
+            },
         },
         extend: {
             colors: {
@@ -38,10 +38,10 @@ module.exports = {
                     700: '#636363',
                     800: '#484a4a',
                     900: '#343636',
-                }
+                },
             },
             fontFamily: {
-                sans: ['Inter', ...defaultTheme.fontFamily.sans]
+                sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
         },
     },
