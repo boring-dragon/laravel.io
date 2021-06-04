@@ -1,4 +1,4 @@
-<div class="flex justify-center">
+<div class="container mx-auto flex justify-center">
     <div class="w-2/3 text-center">
         <p class="text-lg mb-12">
             We'd like to thank these <x-accent-text>amazing companies</x-accent-text> for supporting us
