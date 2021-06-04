@@ -199,7 +199,7 @@
     <!-- /Laravel.io in numbers -->
 
     <!-- Popular articles -->
-    <section class="container mx-auto">
+    <section class="container mx-auto mb-40">
         <div class="mx-32">
             <div class="flex items-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 w-1/2">Popular articles</h2>
