@@ -1,4 +1,4 @@
-@extends('layouts.base', ['bodyClass' => 'home', 'disableFooterAds' => true])
+@extends('layouts.base', ['bodyClass' => 'home', 'disableFooterAds' => true, 'isTailwindUi' => true])
 
 @section('body')
     @include('layouts._alerts')
