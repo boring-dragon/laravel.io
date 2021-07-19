@@ -6,8 +6,6 @@ use App\Models\Article;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/* @var \Illuminate\Database\Eloquent\Factory $factory */
-
 class ArticleFactory extends Factory
 {
     /**
@@ -25,9 +23,7 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            'author_id' => function () {
-                return User::factory()->create()->id;
-            },
+            'author_id' => User::factory(),
             'title' => $this->faker->sentence,
             'body' => $this->faker->paragraphs(3, true),
             'slug' => $this->faker->unique()->slug,

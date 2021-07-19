@@ -209,11 +209,6 @@ final class User extends Authenticatable implements MustVerifyEmail
         return $this->articles()->count();
     }
 
-    public function series(): HasMany
-    {
-        return $this->hasMany(Series::class, 'author_id');
-    }
-
     public static function findByUsername(string $username): self
     {
         return static::where('username', $username)->firstOrFail();
@@ -242,11 +237,50 @@ final class User extends Authenticatable implements MustVerifyEmail
         return $this->replyAble()->isSolution()->count();
     }
 
-    public function scopeMostSolutions(Builder $query)
+    public function scopeMostSolutions(Builder $query, int $inLastDays = null)
     {
-        return $query->withCount(['replyAble as most_solutions' => function ($query) {
-            return $query->join('threads', 'threads.solution_reply_id', '=', 'replies.id')
-                ->where('replyable_type', 'threads');
-        }])->orderBy('most_solutions', 'desc');
+        return $query->withCount(['replyAble as solutions_count' => function ($query) use ($inLastDays) {
+            $query->where('replyable_type', 'threads')
+                ->join('threads', 'threads.solution_reply_id', '=', 'replies.id');
+
+            if ($inLastDays) {
+                $query->where('replies.created_at', '>', now()->subDays($inLastDays));
+            }
+
+            return $query;
+        }])->orderBy('solutions_count', 'desc');
+    }
+
+    public function scopeMostSolutionsInLastDays(Builder $query, int $days)
+    {
+        return $query->mostSolutions($days);
+    }
+
+    public function scopeWithCounts(Builder $query)
+    {
+        return $query->withCount([
+            'threadsRelation as threads_count',
+            'replyAble as replies_count',
+            'replyAble as solutions_count' => function (Builder $query) {
+                return $query->join('threads', 'threads.solution_reply_id', '=', 'replies.id')
+                    ->where('replyable_type', 'threads');
+            },
+        ]);
+    }
+
+    public function scopeHasActivity(Builder $query)
+    {
+        return $query->where(function ($query) {
+            $query->has('threadsRelation')
+                ->orHas('replyAble');
+        });
+    }
+
+    public function scopeModerators(Builder $query)
+    {
+        return $query->whereIn('type', [
+            self::ADMIN,
+            self::MODERATOR,
+        ]);
     }
 }

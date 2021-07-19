@@ -5,8 +5,6 @@ use App\Http\Controllers\Admin\ArticlesController as AdminArticlesController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Articles\ArticlesController;
 use App\Http\Controllers\Articles\AuthoredArticles;
-use App\Http\Controllers\Articles\AuthoredSeries;
-use App\Http\Controllers\Articles\SeriesController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\GithubController;
 use App\Http\Controllers\Auth\LoginController;
@@ -30,9 +28,9 @@ Route::feeds();
 
 // Home
 Route::get('/', [HomeController::class, 'show'])->name('home');
-Route::get('rules', [HomeController::class, 'rules'])->name('rules');
-Route::get('terms', [HomeController::class, 'terms'])->name('terms');
-Route::get('privacy', [HomeController::class, 'privacy'])->name('privacy');
+Route::view('rules', 'rules')->name('rules');
+Route::view('terms', 'terms')->name('terms');
+Route::view('privacy', 'privacy')->name('privacy');
 Route::get('bin/{paste?}', [HomeController::class, 'pastebin']);
 
 Route::get('articles/{article}/social.png', SocialImageController::class)->name('articles.image');
@@ -113,16 +111,6 @@ Route::prefix('articles')->group(function () {
     Route::get('{article}/edit', [ArticlesController::class, 'edit'])->name('articles.edit');
     Route::put('{article}', [ArticlesController::class, 'update'])->name('articles.update');
     Route::delete('{article}', [ArticlesController::class, 'delete'])->name('articles.delete');
-});
-
-// Series
-Route::prefix('series')->group(function () {
-    Route::get('authored', AuthoredSeries::class)->name('user.series');
-    Route::get('create', [SeriesController::class, 'create'])->name('series.create');
-    Route::post('/', [SeriesController::class, 'store'])->name('series.store');
-    Route::get('{series}/edit', [SeriesController::class, 'edit'])->name('series.edit');
-    Route::put('{series}', [SeriesController::class, 'update'])->name('series.update');
-    Route::delete('{series}', [SeriesController::class, 'delete'])->name('series.delete');
 });
 
 // Admin
